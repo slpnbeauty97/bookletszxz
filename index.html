@@ -12,6 +12,16 @@
             align-items: center;
             height: 100vh;
             overflow: hidden;
+            flex-wrap: wrap;
+            padding: 20px;
+            gap: 20px;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
         }
         .book {
             width: 600px;
@@ -40,14 +50,48 @@
         .book:hover .page:nth-child(odd) {
             transform: rotateY(-180deg);
         }
+        .tarot-reader {
+            width: 300px;
+            height: 400px;
+            background: url('tarot-reader.jpg') center/cover;
+            border: 2px solid #5a3e1b;
+        }
+        
+        @media (max-width: 1024px) {
+            body {
+                flex-direction: column;
+                height: auto;
+                overflow: auto;
+            }
+            .container {
+                flex-direction: column;
+            }
+            .book, .tarot-reader {
+                width: 90%;
+                max-width: 400px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .book, .tarot-reader {
+                width: 100%;
+                max-width: 300px;
+            }
+            .tarot-reader {
+                margin-left: 0;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="book">
-        <div class="page">Page 1 - Spells & Runes</div>
-        <div class="page">Page 2 - Potion Recipes</div>
-        <div class="page">Page 3 - Ancient Symbols</div>
-        <div class="page">Page 4 - Forbidden Knowledge</div>
+    <div class="container">
+        <div class="book">
+            <div class="page">Page 1 - Spells & Runes</div>
+            <div class="page">Page 2 - Potion Recipes</div>
+            <div class="page">Page 3 - Ancient Symbols</div>
+            <div class="page">Page 4 - Forbidden Knowledge</div>
+        </div>
+        <div class="tarot-reader"></div>
     </div>
 </body>
 </html>
